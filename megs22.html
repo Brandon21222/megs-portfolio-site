@@ -112,7 +112,7 @@
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
-      justify-content: flex-start; /* Alignment fix: left-align with text */
+      justify-content: flex-start;
       position: relative;
       bottom: 0;
       margin-bottom: 2rem;
@@ -209,7 +209,7 @@
       }
 
       .contact-icons {
-        justify-content: center; /* Mobile: re-center */
+        justify-content: center;
       }
 
       .dark-toggle {
@@ -217,10 +217,9 @@
       }
     }
 
-    /* New style for second set of icons - centered at the bottom */
     .bottom-contact-icons {
       display: flex;
-      justify-content: center; /* Centering the icons */
+      justify-content: center;
       gap: 1rem;
       margin-top: 2rem;
     }
@@ -301,13 +300,11 @@
         <h2>Contact</h2>
         <ul>
           <li><strong>Email:</strong> <a href="mailto:megscoetzee@gmail.com">megscoetzee@gmail.com</a></li>
-          <li><strong>Phone:</strong> +27 71 840 9788</li>
         </ul>
       </section>
     </main>
   </div>
 
-  <!-- Updated second set of icons - centered at the bottom -->
   <div class="bottom-contact-icons">
     <a href="mailto:megscoetzee@gmail.com" class="icon-link icon-email tooltip" data-tooltip="Email"><i class="fas fa-envelope"></i></a>
     <a href="tel:+27718409788" class="icon-link icon-phone tooltip" data-tooltip="Call"><i class="fas fa-phone"></i></a>
