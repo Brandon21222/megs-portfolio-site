@@ -1,0 +1,329 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Megan Coetzee | Digital Analyst Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #0A2540;
+      --accent-color: #FF6B6B;
+      --link-color: #1DA1F2;
+      --light-bg: #f9f9f9;
+      --dark-bg: #1a1a1a;
+      --dark-text: #f0f0f0;
+      --sun-color: #FFD700;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--light-bg);
+      color: var(--primary-color);
+      line-height: 1.6;
+      padding: 2rem;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .dark-mode {
+      background-color: var(--dark-bg);
+      color: var(--dark-text);
+    }
+
+    .wrapper {
+      display: flex;
+      flex-direction: row;
+      max-width: 1000px;
+      margin: auto;
+      gap: 3rem;
+    }
+
+    .sidebar {
+      flex: 1;
+      max-width: 280px;
+      animation: bounceIn 1s ease;
+    }
+
+    .sidebar img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+
+    .sidebar h1 {
+      font-size: 1.8rem;
+      color: var(--link-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .sidebar p {
+      font-size: 1rem;
+      color: #aaa;
+    }
+
+    .content {
+      flex: 2;
+      animation: bounceIn 1.2s ease;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      color: var(--link-color);
+      margin-bottom: 0.8rem;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    strong {
+      font-weight: 600;
+    }
+
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-icons {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: flex-start; /* Alignment fix: left-align with text */
+      position: relative;
+      bottom: 0;
+      margin-bottom: 2rem;
+    }
+
+    .icon-link {
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    .icon-link:hover {
+      transform: scale(1.2);
+    }
+
+    .icon-email:hover { color: white; }
+    .icon-phone:hover { color: green; }
+    .icon-linkedin:hover { color: #0a66c2; }
+    .icon-cv:hover { color: red; }
+    .icon-doc:hover { color: yellow; }
+
+    .tooltip {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .tooltip::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #333;
+      color: #fff;
+      padding: 5px 8px;
+      border-radius: 4px;
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+      font-size: 0.75rem;
+    }
+
+    .tooltip:hover::after {
+      opacity: 1;
+    }
+
+    .section-divider {
+      width: 60%;
+      height: 1px;
+      background-color: #ccc;
+      margin: 1rem auto;
+    }
+
+    .dark-toggle {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: 2px solid var(--primary-color);
+      border-radius: 20px;
+      padding: 0.3rem 0.8rem;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .dark-toggle:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    .sun-moon-icon {
+      font-size: 1.6rem;
+    }
+
+    .dark-mode .fa-sun {
+      color: var(--sun-color);
+    }
+
+    @keyframes bounceIn {
+      0% { transform: scale(0.9); opacity: 0; }
+      60% { transform: scale(1.05); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+
+    @media (max-width: 768px) {
+      .wrapper {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        max-width: 100%;
+        text-align: center;
+      }
+
+      .contact-icons {
+        justify-content: center; /* Mobile: re-center */
+      }
+
+      .dark-toggle {
+        right: 0.5rem;
+      }
+    }
+
+    /* New style for second set of icons - centered at the bottom */
+    .bottom-contact-icons {
+      display: flex;
+      justify-content: center; /* Centering the icons */
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body class="dark-mode">
+  <button class="dark-toggle" onclick="toggleDarkMode()">
+    <i class="sun-moon-icon fas fa-sun" id="toggle-icon"></i>
+  </button>
+  <div class="wrapper">
+    <aside class="sidebar">
+      <img src="https://i.ibb.co/rfq6KBQy/thumbnail-image0.png" alt="Megan Coetzee">
+      <h1>Megan Coetzee</h1>
+      <p>UCT MSc Grad | Aspiring Digital Analyst</p>
+
+      <div class="contact-icons">
+        <a href="mailto:megscoetzee@gmail.com" class="icon-link icon-email tooltip" data-tooltip="Email"><i class="fas fa-envelope"></i></a>
+        <a href="tel:+27718409788" class="icon-link icon-phone tooltip" data-tooltip="Call"><i class="fas fa-phone"></i></a>
+        <a href="https://www.linkedin.com/in/megan-coetzee-b1b351138" target="_blank" class="icon-link icon-linkedin tooltip" data-tooltip="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="cv.pdf" download="" class="icon-link icon-cv tooltip" data-tooltip="Download CV"><i class="fas fa-file-download"></i></a>
+        <a href="references.pdf" target="_blank" class="icon-link icon-doc tooltip" data-tooltip="References"><i class="fas fa-file-alt"></i></a>
+      </div>
+    </aside>
+
+    <main class="content">
+      <section>
+        <h2>About Me</h2>
+        <p>I’m Megan Coetzee, a soon-to-be MSc graduate in Computational Chemistry from the University of Cape Town with a passion for data and digital analytics. My academic and freelance experience has sharpened my analytical thinking and data-driven decision making. I’m now focused on entering the digital marketing space where I can help transform data into actionable insights and real-world results.</p>
+        <div class="section-divider"></div>
+      </section>
+
+      <section>
+        <h2>Key Skills</h2>
+        <ul>
+          <li><strong>Python</strong> – Data analysis, scripting</li>
+          <li><strong>Excel</strong> – Advanced automation and reporting</li>
+          <li><strong>Power BI &amp; SQL</strong> – Foundational experience</li>
+          <li><strong>Critical Thinking</strong> – Problem-solving and pattern recognition</li>
+          <li><strong>Communication</strong> – Written, verbal and remote collaboration</li>
+        </ul>
+        <div class="section-divider"></div>
+      </section>
+
+      <section>
+        <h2>Education</h2>
+        <ul>
+          <li><strong>MSc Computational Chemistry</strong> – UCT, 2022–2025 (Thesis submission: May 2025)</li>
+          <li><strong>BSc Hons Chemistry</strong> – UCT, 2021 | First Class Pass</li>
+          <li><strong>BSc Chemistry &amp; Maths</strong> – UCT, 2017–2020 | Dean’s Merit List, Physics Class Medal</li>
+        </ul>
+        <div class="section-divider"></div>
+      </section>
+
+      <section>
+        <h2>Experience</h2>
+        <ul>
+          <li><strong>Chemistry Tutor (UCT, 2022–2024):</strong> Led tutorials and labs, evaluated reports, supported learning.</li>
+          <li><strong>Data &amp; Excel Projects (Dream Team Gaming):</strong> Automated reports, conducted data cleaning and interpretation.</li>
+          <li><strong>Volunteer, RSC Symposium:</strong> Event logistics and academic engagement.</li>
+        </ul>
+        <div class="section-divider"></div>
+      </section>
+
+      <section>
+        <h2>Next Steps</h2>
+        <p>I am actively upskilling with plans to complete:</p>
+        <ul>
+          <li>Google Analytics 4 (GA4)</li>
+          <li>Google Tag Manager (GTM)</li>
+          <li>Tableau</li>
+          <li>IBM Data Science Certificate</li>
+          <li>HTML/CSS for digital marketing insight</li>
+        </ul>
+        <div class="section-divider"></div>
+      </section>
+
+      <section>
+        <h2>Contact</h2>
+        <ul>
+          <li><strong>Email:</strong> <a href="mailto:megscoetzee@gmail.com">megscoetzee@gmail.com</a></li>
+          <li><strong>Phone:</strong> +27 71 840 9788</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <!-- Updated second set of icons - centered at the bottom -->
+  <div class="bottom-contact-icons">
+    <a href="mailto:megscoetzee@gmail.com" class="icon-link icon-email tooltip" data-tooltip="Email"><i class="fas fa-envelope"></i></a>
+    <a href="tel:+27718409788" class="icon-link icon-phone tooltip" data-tooltip="Call"><i class="fas fa-phone"></i></a>
+    <a href="https://www.linkedin.com/in/megan-coetzee-b1b351138" target="_blank" class="icon-link icon-linkedin tooltip" data-tooltip="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="cv.pdf" download="" class="icon-link icon-cv tooltip" data-tooltip="Download CV"><i class="fas fa-file-download"></i></a>
+    <a href="references.pdf" target="_blank" class="icon-link icon-doc tooltip" data-tooltip="References"><i class="fas fa-file-alt"></i></a>
+  </div>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+      const icon = document.getElementById('toggle-icon');
+      icon.classList.toggle('fa-sun');
+      icon.classList.toggle('fa-moon');
+    }
+  </script>
+
+</body>
+</html>
